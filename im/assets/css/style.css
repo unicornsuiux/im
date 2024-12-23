@@ -1,0 +1,99 @@
+/* @File: Project Name Template Style
+
+This file holds the styles for the template itself. 
+To change how the template looks, this is the file you should edit.
+
+This files table contents are outlined below>>>>>
+
+*******************************************
+*******************************************
+*/
+.h-100vh{
+    height: 100vh;
+}
+.verticaly-center{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.container{
+    max-width: 1250px;
+}
+.bg-border{
+    background-image: url(../images/svg/border.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/* THEME HEADER */
+.header{
+    padding: 35px 44px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+.header-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.menu-wraper{
+    text-align: end;
+}
+.menu-wraper li{
+    margin-bottom: 10px;
+}
+.menu-wraper li a{
+    font-family: var(--primary-body-font);
+    font-weight: var(--fw-500);
+    font-size: var(--font-size-16);
+    color: var(--color-light);
+    line-height: 1.3;
+    letter-spacing: 0.04em;
+    text-align: right;
+}
+
+/* WHO WE ARE */
+.about-wrapper{
+    padding: 80px 70px;
+}
+.about-content-wrapper p{
+    font-family: var(--primary-body-font);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 28px;
+    text-align: left;
+    color: var(--color-light);
+}
+.about-img{
+    width: 100%;
+    height: 60vh;
+    max-height: 600px;
+    position: relative;
+}  
+.about-img img{
+    border-radius: var(--radius-15);
+}
+.about-block img{
+    margin-bottom: 20px;
+}
+.about-block{
+    border-radius: var(--radius-10);
+    padding: 20px 18px 10px 18px;
+    background-color: var(--primary-color);
+}
+.about-block h3{
+    font-size: 46px;
+    margin-bottom: 0;
+}
+.about-block p{
+    color: var(--color-white);
+}
+.circular{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: -50px;
+    top: 30px;
+}

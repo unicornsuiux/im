@@ -1,0 +1,620 @@
+/* @File: Project Name Template Style
+
+This file holds the base styles for the template itself. 
+To change how the template looks, this is the file you should edit.
+
+This files table contents are outlined below>>>>>
+
+*******************************************
+--> Variables Css
+--> Default Css
+--> Preloading Css
+--> Typography Css Start
+--> Body Scrollbar
+--> Opacity Utility Classes
+--> Input With Button
+--> Background Color
+*******************************************
+*/
+
+
+/* ============================ */
+/* Variables Css Start*/
+/* ============================ */ 
+
+:root {
+/*=============== THEME FONT FAMILY DECLARATION ===============*/
+    --primary-body-font: "Urbanist", sans-serif;
+    --primary-heading-font: "Libre Baskerville", sans-serif;
+
+/*=============== COLOR DECLARATION ===============*/
+    --color-white: #ffffff;
+    --color-light: #ADB5BD;
+    --color-dark-gray: #333;
+    --color-dark: #000;
+    --primary-color: #3C66D1;
+    --secondary-color: #737373;
+    --title-color: #fff;
+    --label-color: #181a20;
+    --font-color-dark: #181a20;
+    --body-text-color: #000;
+    --bc-light-300: #afafaf;
+    --th-bg-color: #001011;
+
+    /*=============== FONT WEIGHT DECLARATION ===============*/
+    --fw-normal: normal;
+    --fw-200: 200;
+    --fw-300: 300;
+    --fw-400: 400;
+    --fw-500: 500;
+    --fw-600: 600;
+    --fw-700: 700;
+    --fw-800: 800;
+    --fw-900: 900;
+
+    /*=============== FONT SIZE DECLARATION ===============*/
+    --font-size-body: 16px;
+    --font-size-paragraph: 16px;
+    --font-size-h1: 65px;
+    --font-size-h2: 55px;
+    --font-size-h3: 30px;
+    --font-size-h4: 23px;
+    --font-size-h5: 20px;
+    --font-size-h6: 18px;
+    --font-size-button: 20px;
+    --font-size-10: 10px;
+    --font-size-12: 12px;
+    --font-size-14: 14px;
+    --font-size-15: 15px;
+    --font-size-16: 16px;
+    --font-size-18: 18px;
+    --font-size-20: 20px;
+    --font-size-22: 22px;
+    --font-size-24: 24px;
+    --font-size-26: 26px;
+    --font-size-28: 28px;
+    --font-size-30: 30px;
+    --font-size-32: 32px;
+    --font-size-34: 34px;
+    --font-size-36: 36px;
+    --font-size-38: 38px;
+    --font-size-40: 40px;
+    --font-size-42: 42px;
+    --font-size-44: 44px;
+    --font-size-46: 46px;
+    --font-size-48: 48px;
+    --font-size-50: 50px;
+    --font-size-52: 52px;
+    --font-size-54: 54px;
+    --font-size-56: 56px;
+    --font-size-58: 58px;
+    --font-size-60: 60px;
+    --font-size-62: 62px;
+    --font-size-64: 64px;
+    --font-size-66: 66px;
+    --font-size-68: 68px;
+    --font-size-70: 70px;
+    --font-size-72: 72px;
+    --font-size-74: 74px;
+    --font-size-76: 76px;
+    --font-size-78: 78px;
+    --font-size-80: 80px;  
+
+    /*=============== LINE HEIGHT DECLARATION ===============*/
+    --btn-line-height: 1.5;
+    --p-line-height: 1.5;
+    --heading-line-height: 1.4;
+
+    /*=============== BORDER RADIUS DECLARATION ===============*/
+    --radius-5: 5px;
+    --radius-10: 10px;
+    --radius-15: 15px;
+    --radius-20: 20px;
+    --radius-25: 25px;
+    --radius-30: 30px;
+    --radius-50: 50%;
+}
+
+/* ============================ */
+/* Variables Css End*/
+/* ============================ */ 
+
+
+
+/* ============================ */
+/* Default Css */
+/* ============================ */ 
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ============================ */
+/* Preloading Css Start */
+/* ============================ */ 
+
+#preloading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background-color: #fff;
+    transition: 0.3s;
+}
+.preloading-thumb {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 260px;
+    width: 260px;
+}
+.preloading-thumb img {
+    width: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: img-blink 1s ease-in-out infinite alternate;
+}
+.preloading-thumb-wrap {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+}
+.preloading-border {
+    border: 2px dashed var(--color-dark-gray);
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: rotate-infinite 15s linear infinite;
+}
+@keyframes img-blink {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
+@keyframes rotate-infinite {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* ============================ */
+/* Preloading Css End */
+/* ============================ */
+
+
+
+/* ============================ */
+/* Typography Css Start */
+/* ============================ */ 
+
+a {
+    text-decoration: none;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--primary-heading-font);
+    color: var(--title-color);
+    margin-top: 0px;
+    font-weight: var(--fw-600);
+    line-height: var(--heading-line-height);
+    -webkit-transition: all 0.3s ease-out 0s;
+    -moz-transition: all 0.3s ease-out 0s;
+    -ms-transition: all 0.3s ease-out 0s;
+    -o-transition: all 0.3s ease-out 0s;
+    transition: all 0.3s ease-out 0s;
+}
+h1 {
+    font-size: var(--font-size-h1);
+}
+h2 {
+    font-size: var(--font-size-h2);
+}
+h3 {
+    font-size: var(--font-size-h3); line-height: 1.5;
+}
+h4 {
+    font-size: var(--font-size-h4); line-height: 1.7;
+}
+h5 {
+    font-size: var(--font-size-h5);
+}
+h6 {
+    font-size: var(--font-size-h6); line-height: 2;
+}
+ul {
+    margin: 0px;
+    padding: 0px;
+}
+p {
+    font-family: var(--th-body-family);
+    font-size: var(--font-size-paragraph);
+    font-weight: var(--fw-400);
+    color: var(--body-text-color);
+    line-height: var(--p-line-height);
+}
+a, button, p, input, select, textarea, li, h1, h2, h3, h4, h5, h6 {
+    -webkit-transition: all 0.3s ease-out 0s;
+    -moz-transition: all 0.3s ease-out 0s;
+    -ms-transition: all 0.3s ease-out 0s;
+    -o-transition: all 0.3s ease-out 0s;
+    transition: all 0.3s ease-out 0s;
+}
+
+/* ============================ */
+/* Typography Css End        */
+/* ============================ */ 
+
+
+
+/* ============================ */
+/* Body Scrollbar Styling        */
+/* ============================ */ 
+
+body::-webkit-scrollbar {
+    width: 5px;
+    box-shadow: none;
+}
+body::-webkit-scrollbar-track {
+    background-color: var(--primary-color);
+    box-shadow: none;
+}
+body::-webkit-scrollbar-thumb {
+    background-color: var(--secondary-color);
+    box-shadow: none;
+}
+
+/* ============================ */
+/* End of Body Scrollbar Styling */
+/* ============================ */
+
+
+
+/* ============================ */
+/* Opacity Utility Classes       */
+/* ============================ */
+
+.opacity-0 {
+    opacity: 0;
+}
+.opacity-1 {
+    opacity: 0.1;
+}
+.opacity-2 {
+    opacity: 0.2;
+}
+.opacity-3 {
+    opacity: 0.3;
+}
+.opacity-4 {
+    opacity: 0.4;
+}
+.opacity-5 {
+    opacity: 0.5;
+}
+.opacity-6 {
+    opacity: 0.6;
+}
+.opacity-7 {
+    opacity: 0.7;
+}
+.opacity-8 {
+    opacity: 0.8;
+}
+.opacity-9 {
+    opacity: 0.9;
+}
+
+/* ============================ */
+/* End of Opacity Classes        */
+/* ============================ */
+
+
+
+/* ============================= */
+/* Global Heading Styles          */
+/* ============================= */
+
+.heading-lg {
+    font-size: var(--font-size-60);
+}
+.heading-md {
+    color: var(--title-color);
+    font-weight: var(--fw-400);
+    line-height: 1.3;
+    font-size: var(--font-size-46);
+}
+.heading-md-small {
+    font-size: var(--font-size-26);
+    line-height: 1.4;
+    color: var(--title-color);
+    font-weight: var(--fw-700);
+}
+.heading-md-medium {
+    font-size: var(--font-size-30);
+    color: var(--title-color);
+    font-weight: var(--fw-700);
+}
+.heading-sm {
+    font-size: var(--font-size-20);
+    line-height: 1.4;
+    font-weight: var(--fw-700);
+    color: var(--title-color);
+}
+.heading-sm-bold {
+    display: block;
+    font-size: var(--font-size-20);
+    font-weight: var(--th-fw-700);
+    margin: 0;
+}
+
+/* ============================= */
+/* Media Queries for Large Screens */
+/* 1400px - 1599px               */
+/* ============================= */
+
+@media only screen and (min-width: 1400px) and (max-width: 1599px) {
+    .heading-lg {
+        font-size: var(--font-size-56);
+    }
+    .heading-md {
+        font-size: var(--font-size-40);
+    }
+    .heading-md-small {
+        font-size: var(--font-size-26);
+    }
+    .heading-md-medium {
+        font-size: var(--font-size-30);
+    }
+}
+
+/* ============================= */
+/* Media Queries for Medium-Large Screens */
+/* 1200px - 1399px               */
+/* ============================= */
+
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+    .heading-lg {
+        font-size: var(--font-size-46);
+    }
+    .heading-md-small {
+        font-size: var(--font-size-22);
+    }
+    .heading-md-medium {
+        font-size: var(--font-size-26);
+    }
+}
+
+/* ============================= */
+/* Media Queries for Medium Screens */
+/* 992px - 1199px               */
+/* ============================= */
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .heading-lg {
+        font-size: var(--font-size-40);
+    }
+    .heading-md {
+        font-size: var(--font-size-36);
+    }
+    .heading-md-small {
+        font-size: var(--font-size-20);
+    }
+    .heading-md-medium {
+        font-size: var(--font-size-22);
+    }
+}
+
+/* ============================= */
+/* Media Queries for Small-Medium Screens */
+/* 576px - 991px               */
+/* ============================= */
+
+@media only screen and (min-width: 576px) and (max-width: 767px), only screen and (min-width: 768px) and (max-width: 991px) {
+    .heading-lg {
+        font-size: var(--font-size-44);
+    }
+    .heading-md {
+        font-size: var(--font-size-30);
+    }
+    .heading-md-small {
+        font-size: var(--font-size-18);
+    }
+    .heading-md-medium {
+        font-size: var(--font-size-20);
+    }
+}
+
+/* ============================= */
+/* Media Queries for Small Screens */
+/* Max-width 575px               */
+/* ============================= */
+
+@media (max-width: 575px) {
+    .heading-lg {
+        font-size: var(--font-size-30);
+    }
+    .heading-md {
+        font-size: var(--font-size-26);
+    }
+    .heading-md-small,
+    .heading-md-medium {
+        font-size: var(--font-size-18);
+    }
+}
+  
+/* ============================= */
+/* End Global Heading Styles          */
+/* ============================= */
+
+
+
+/* ============================= */
+/* Start Input With Button          */
+/* ============================= */
+
+.search-input-wrap label {
+    display: block;
+    font-size: var(--font-size-18);
+    font-weight: var(--fw-600);
+    line-height: 1.3;
+    color: var(--label-color);
+}
+.search-input {
+    position: relative;
+}
+.search-input input {
+    width: 100%;
+    height: 58px;
+    border: 1px solid var(--bc-light-300);
+    padding-inline-start: 22px;
+    padding-inline-end: 80px;
+}
+.search-submit {
+    position: absolute;
+    inset-inline-end: 0;
+    bottom: 0;
+    right: 0;
+}
+.search-submit button {
+    height: 58px;
+    width: 58px;
+    line-height: 58px;
+    text-align: center;
+    background-color: var(--primary-color);
+    font-size: var(--font-size-button);
+    color: var(--th-bg-white);
+    -webkit-transition: all 0.3s ease-out 0s;
+    -moz-transition: all 0.3s ease-out 0s;
+    -ms-transition: all 0.3s ease-out 0s;
+    -o-transition: all 0.3s ease-out 0s;
+    transition: all 0.3s ease-out 0s;
+}
+.search-submit button:hover {
+    background-color: var(--primary-color);
+}
+
+/* ============================= */
+/* End Input With Button          */
+/* ============================= */
+
+
+
+/* ============================ */
+/* Start Background Colors       */
+/* ============================ */
+
+.bg-primary{
+    background-color: var(--primary-color) !important;
+}
+.bg-secondary{
+    background-color: var(--secondary-color) !important;
+}
+.bg-dark{
+    background-color: var(--color-dark) !important;
+}
+.bg-dark-gray{
+    background-color: var(--color-dark-gray) !important;
+}
+.bg-light{
+    background-color: var(--color-light) !important;
+}
+.bg-transparent{
+    background-color: transparent !important;
+}
+.bg-th-dark{
+    background-color: var(--th-bg-color);
+}
+
+/* ============================ */
+/* End Background Colors       */
+/* ============================ */
+
+
+/* ============================ */
+/* Start Text Colors       */
+/* ============================ */
+
+.text-primary{
+    color: var(--primary-color) !important;
+}
+.text-secondary{
+    color: var(--secondary-color) !important;
+}
+.text-light{
+    color: var(--color-light) !important;
+}
+.text-white{
+    color: var(--color-white) !important;
+}
+.text-dark{
+    color: var(--color-dark) !important;
+}
+
+/* ============================ */
+/* End Text Colors       */
+/* ============================ */
+
+
+/* ============================ */
+/* Start Border Radius       */
+/* ============================ */
+
+.rounded-5{
+    border-radius: var(--radius-5);
+}
+.rounded-10{
+    border-radius: var(--radius-10);
+}
+.rounded-15{
+    border-radius: var(--radius-15);
+}
+.rounded-20{
+    border-radius: var(--radius-20);
+}
+.rounded-25{
+    border-radius: var(--radius-25);
+}
+.rounded-30{
+    border-radius: var(--radius-30);
+}
+.rounded-50{
+    border-radius: var(--radius-50);
+}
+
+/* ============================ */
+/* End Border Radius       */
+/* ============================ */
+
+
+/* ============================ */
+/* Start Image Class       */
+/* ============================ */
+.obj-fit-cover{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.obj-fit-contain{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+/* ============================ */
+/* End Image Class       */
+/* ============================ */
