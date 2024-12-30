@@ -27,18 +27,22 @@ This files table contents are outlined below>>>>>
     --primary-body-font: "Urbanist", sans-serif;
     --primary-heading-font: "Libre Baskerville", sans-serif;
 
+    --vw-width: calc(100vw - 18px);
+    --xspace: 5px;
+
 /*=============== COLOR DECLARATION ===============*/
     --color-white: #ffffff;
     --color-light: #ADB5BD;
-    --color-dark-gray: #333;
+    --color-dark-gray: #495057;
+    --color-gray:#6C757D;
     --color-dark: #000;
     --primary-color: #3C66D1;
     --secondary-color: #737373;
     --title-color: #fff;
     --label-color: #181a20;
     --font-color-dark: #181a20;
-    --body-text-color: #000;
-    --bc-light-300: #afafaf;
+    --body-text-color: #ADB5BD;
+    --bc-light-300: #CED4DA;
     --th-bg-color: #001011;
 
     /*=============== FONT WEIGHT DECLARATION ===============*/
@@ -226,16 +230,19 @@ h2 {
     font-size: var(--font-size-h2);
 }
 h3 {
-    font-size: var(--font-size-h3); line-height: 1.5;
+    font-size: var(--font-size-h3); 
+    line-height: 1.5;
 }
 h4 {
-    font-size: var(--font-size-h4); line-height: 1.7;
+    font-size: var(--font-size-h4); 
+    line-height: 1.7;
 }
 h5 {
     font-size: var(--font-size-h5);
 }
 h6 {
-    font-size: var(--font-size-h6); line-height: 2;
+    font-size: var(--font-size-h6); 
+    line-height: 2;
 }
 ul {
     margin: 0px;

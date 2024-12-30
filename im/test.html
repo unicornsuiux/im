@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <title>Trigger Animations on Click</title>
+</head>
+<style>
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    perspective: 1500px;
+}
+
+main {
+    position: relative;
+    height: 100vh;
+    overflow: hidden; /* Ensure no scrolling */
+}
+
+.scroll-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Anchor Menu Styles */
+.anchor-menu {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px 15px;
+    border-radius: 8px;
+    z-index: 1000;
+}
+
+.anchor-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.anchor-menu ul li {
+    margin-bottom: 10px;
+}
+
+.anchor-menu ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.anchor-menu ul li a:hover {
+    color: #ffcc00;
+}
+</style>
+<body>
+    <main>
+        <section id="section1" class="scroll-section" style="background-color: #ff7f7f;">
+            Section 1
+        </section>
+        <section id="section2" class="scroll-section" style="background-color: #ffbf80;">
+            Section 2
+        </section>
+        <section id="section3" class="scroll-section" style="background-color: #ffff80;">
+            Section 3
+        </section>
+        <section id="section4" class="scroll-section" style="background-color: #80ff80;">
+            Section 4
+        </section>
+        <section id="section5" class="scroll-section" style="background-color: #80bfff;">
+            Section 5
+        </section>
+    </main>
+    
+    <!-- Navigation Menu -->
+    <nav class="anchor-menu">
+        <ul>
+            <li><a href="#section1" data-animation="animate__fadeInUp">Section 1</a></li>
+            <li><a href="#section2" data-animation="animate__flipInX">Section 2</a></li>
+            <li><a href="#section3" data-animation="animate__fadeInDown">Section 3</a></li>
+            <li><a href="#section4" data-animation="animate__zoomIn">Section 4</a></li>
+            <li><a href="#section5" data-animation="animate__slideInRight">Section 5</a></li>
+        </ul>
+    </nav>
+
+    <script>
+        document.querySelectorAll('.anchor-menu a').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault(); // Prevent default anchor behavior
+                
+                // Get the target section and animation class
+                const targetId = this.getAttribute('href').substring(1); // Strip `#` to get ID
+                const animationClass = this.getAttribute('data-animation');
+                const targetSection = document.getElementById(targetId);
+
+                // Remove existing animation classes
+                targetSection.classList.remove('animate__animated', animationClass);
+                
+                // Force reflow to reset animations
+                void targetSection.offsetWidth;
+
+                // Add animation classes
+                targetSection.classList.add('animate__animated', animationClass);
+
+                // Smooth scroll to the section
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+<!-- <header class="header">
+    <div class="header-container">
+        <div class="header-logo">
+            <img src="./assets/images/logo.svg" alt="">
+        </div>
+        <div class="header-menu">
+            <ul class="menu-wraper list-unstyled">
+                <li class="active"><a href="">HOME</a></li>
+                <li><a href="">ABOUT US</a></li>
+                <li><a href="">SERVICES</a></li>
+                <li><a href="">PORTFOLIO</a></li>
+                <li><a href="">TESTIMONIALS</a></li>
+                <li><a href="">CONTACT US</a></li>
+            </ul>
+        </div>
+    </div>
+</header> -->
+
+<!-- .header .header-logo{
+    width: 200px;
+    height: 120px;
+    background-color: var(--primary-color);
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 120px;
+    height: 80px;
+    border-radius: 0 0 20px 0;
+}
+.header .header-logo img{
+    padding: 0 10px;
+    width: 70px;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.header-menu{
+    position: fixed;
+    right: 0;
+    top: 0;
+    padding: 30px 50px 0 0;
+}
+.menu-wraper{
+    text-align: end;
+}
+.menu-wraper li{
+    margin-bottom: 10px;
+    position: relative;
+}
+.menu-wraper li::after{
+    content: "";
+    position: absolute;
+    right: -50px;
+    top: 8px;
+    width: 25px;
+    height: 10px;
+    background-image: url(../images/svg/hover-icon.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s ease;
+}
+.menu-wraper li.active::after{
+    opacity: 1;
+    visibility: visible;
+    right: -30px;
+}
+.menu-wraper li:hover::after{
+    opacity: 1;
+    visibility: visible;
+    right: -30px;
+}
+.menu-wraper li a{
+    font-family: var(--primary-body-font);
+    font-weight: var(--fw-500);
+    font-size: var(--font-size-16);
+    color: var(--color-light);
+    line-height: 1.3;
+    letter-spacing: 0.04em;
+    text-align: right;
+} -->
